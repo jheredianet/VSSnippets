@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Encabezado de Clase</Title>
+      <Author>Juan Carlos Heredia Mayer</Author>
+      <Description>Encabezado con comentarios para la clase</Description>
+      <HelpUrl />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Keywords />
+      <Shortcut>enc</Shortcut>
+    </Header>
+    <Snippet>
+      <References />
+      <Imports />
+      <Declarations>
+        <Literal Editable="true">
+          <ID>objetivo</ID>
+          <Type />
+          <ToolTip>Aquí viene documentación resumida de nivel de clase.</ToolTip>
+          <Default>Colocar aquí la documentación resumida de nivel de clase</Default>
+          <Function />
+        </Literal>
+        <Literal Editable="true">
+          <ID>comentario</ID>
+          <Type />
+          <ToolTip>Todos los comentarios necesarios</ToolTip>
+          <Default>Todos los comentarios necesarios sin límites</Default>
+          <Function />
+        </Literal>
+        <Literal Editable="true">
+          <ID>classname</ID>
+          <ToolTip>Nombre de la Clase</ToolTip>
+          <Default />
+          <Function>ClassName()</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>fecha</ID>
+          <Default>Now()</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Kind="" Delimiter="$">
+  <![CDATA[
+#region Encabezado de Clase
+/// <summary>
+/// Clase    : $classname$
+/// Fecha    : $fecha$ 
+/// Autor    : Juan Carlos Heredia Mayer
+/// 
+/// Todos los derechos reservados (c) - Informática Borsan (http://www.borsan.es/)
+///
+/// Objetivo :
+/// 	$objetivo$
+/// </summary>
+/// <remarks>
+///
+/// $comentario$
+/// 
+/// Modificado por       : %username%
+/// Fecha de Terminación : %datetimestamp%
+/// Modificaciones       : 
+/// 
+/// </remarks>
+ 
+#endregion $selected$ $end$
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

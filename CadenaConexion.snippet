@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Definición de Propiedad</Title>
+      <Shortcut>cn</Shortcut>
+      <Author>Juan Carlos Heredia Mayer</Author>
+      <Description>Definición de Propiedad de una clase</Description>
+      <HelpUrl />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Keywords />
+
+    </Header>
+    <Snippet>
+      <!-- Add additional Snippet information here -->
+      <Declarations>
+        <Literal>
+          <ID>SqlConnString</ID>
+          <ToolTip>Replace with a SQL connection string.</ToolTip>
+          <Default>"SQL connection string"</Default>
+        </Literal>
+        <Object>
+          <ID>SqlConnection</ID>
+          <Type>System.Data.SqlClient.SqlConnection</Type>
+          <ToolTip>Replace with a connection object in your application.</ToolTip>
+          <Default>dcConnection</Default>
+        </Object>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+  daCustomers = new SqlClient.SqlDataAdapter();
+  selectCommand = new SqlClient.SqlCommand($SqlConnString$);
+  daCustomers.SelectCommand = selectCommand;
+  daCustomers.SelectCommand.Connection = $SqlConnection$;
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

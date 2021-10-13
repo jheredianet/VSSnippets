@@ -1,0 +1,27 @@
+﻿using EnvDTE;
+using EnvDTE80;
+
+// Importante, para que esto funcione hay que descargar la extersión del Market place: VisualCommander
+// Y agregarlo como comando nuevo. 
+// Luego se le puede crear un acceso directo para usarlo desde el Teclado. 
+
+public class M : VisualCommanderExt.ICommand
+{
+	public void Run(EnvDTE80.DTE2 DTE, Microsoft.VisualStudio.Shell.Package package) 
+	{
+		var Seleccion = (EnvDTE.TextSelection)DTE.ActiveWindow.Selection;
+		if (Seleccion != null)
+		{
+			DTE.UndoContext.Open("Comentario");
+			DTE.ExecuteCommand("Edit.LineStart");
+			DTE.ExecuteCommand("Edit.BreakLine");
+			DTE.ExecuteCommand("Edit.LineUp");
+			(DTE.ActiveDocument.Selection as EnvDTE.TextSelection).Text = @"// Modificado: [" + System.Environment.UserName.ToUpper() + "] " + System.DateTime.Now.ToString();
+			DTE.ExecuteCommand("Edit.BreakLine");
+			(DTE.ActiveDocument.Selection as EnvDTE.TextSelection).Text = @"// ";
+			DTE.ExecuteCommand("Edit.LineDown");
+			DTE.ExecuteCommand("Edit.LineStart");
+			DTE.UndoContext.Close();
+		}
+	}
+}
